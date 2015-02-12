@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150212114416) do
   create_table "users", force: :cascade do |t|
     t.string   "first_name",             limit: 25
     t.string   "last_name",              limit: 50
-    t.string   "username",               limit: 25,                  null: false
+    t.string   "username",               limit: 25,  default: " "
     t.string   "password",               limit: 40
     t.string   "role",                   limit: 255
     t.datetime "created_at",                                         null: false
@@ -31,6 +31,10 @@ ActiveRecord::Schema.define(version: 20150212114416) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
+    t.string   "confirmation_token",     limit: 255
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email",      limit: 255
     t.boolean  "confirmable",            limit: 1,   default: false
   end
 
