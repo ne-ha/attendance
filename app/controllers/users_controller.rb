@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   layout false
 
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   
   def index
     @users = User.all
@@ -42,5 +42,11 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy
     redirect_to(:action => 'index')
   end
+
+  private
+
+    def user_param
+      params.require(:user).permit(:username ,:email , :password , :password_confirmation)
+    end
 
 end
