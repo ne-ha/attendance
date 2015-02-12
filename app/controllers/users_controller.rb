@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  layout false
+  
   def new
   end
 
@@ -16,5 +19,5 @@ class UsersController < ApplicationController
 
   def show
   end
-  
+
 end
