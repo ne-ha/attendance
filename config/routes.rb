@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
-  devise_for :models
+  
+  devise_for :users
   # match ':controller(/:action(:/id))' , :via => :get
 
   resources :users do
